@@ -1,0 +1,98 @@
+<!-- 
+Assignment 4 - Web Form
+Author: Jasper Jiaqian Sun
+Date Created: Nov 17, 2021 / Last modified: Nov 20, 2021 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Sun's Donuts</title>
+    <link rel="icon" href="./img/donut.png" />
+</head>
+
+<body>
+    <!-- SKIP LINKS -->
+    <ul class="skip-links">
+        <li><a href="#nav" aria-label="Skip to main navigation">Skip to main navigation</a></li>
+        <li><a href="#main" aria-label="Skip to main content">Skip to main content</a></li>
+        <li>
+            <a href="#footer" aria-label="Skip to bottom of the page">Skip to bottom of page</a>
+        </li>
+    </ul>
+
+    <!-- HEADER -->
+    <header>
+        <div id="nav" class="navbar container">
+            <div class="header-left">
+                <a href="index.html" aria-label="Go to home page">
+                    <img class="header-logo" src="./img/logo.png" alt="Sun's Donuts" />
+                </a>
+            </div>
+            <div class="header-right">
+                <nav class="nav-item">
+                    <li><a href="#" aria-label="Go to Shopping page">Shop</a></li>
+                    <li><a href="#" aria-label="Go to Find us page">Find Us</a></li>
+                    <li><a href="#" aria-label="Go to Contact us page">Contact Us</a></li>
+                </nav>
+            </div>
+            </ul>
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <!-- Banner -->
+        <section class="banner-header container" tabindex="0">
+            <h1 class="hero-title">Ohhh... Donuts!</h1>
+            <p class="container-text ">
+                Endless delicious flavours, made fresh each day.
+            </p>
+            <p class="container-text ">
+                Sign up now, the next three orders are 15% off. </p>
+        </section>
+        <!-- Sign up form -->
+        <section class="signUp container" tabindex="0">
+            <form action="https://formspree.io/f/mrgrwvkq" method="post" class="container">
+                <fieldset>
+                    <h2>Sign Up</h2>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" class="full-name" name="full-name" placeholder="Full Name"
+                        autocomplete="on" />
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required autocomplete="on" />
+                    <label for="phone-number">Phone Number</label>
+                    <input type="phone" id="phone-number" name="phone-number" placeholder="Phone Number"
+                        autocomplete="on" />
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Password" required
+                        autocomplete="on" />
+                    <p>I agree to the
+                        <a href="#" aria-label="Go to privacy policy page ">Terms of Service
+                        </a> & <a href="#" aria-label="Go to terms of service page">Privacy Policy</a>
+                    </p>
+                    <button type="submit" value="submit" class="btn btn-signUp">Submit</button>
+                    <p>Already have an account? <a href="#" aria-label="Go to terms of SignUp page">Sign In</a></p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer" role="footer">
+        <!-- Footer - logo -->
+        <div class="footer container">
+            <img class="footer-logo" src="./img/logo.png" alt="Sun's Donuts" />
+            <small>&copy; 2021 Sun's Donuts</small>
+        </div>
+
+        <a class="to-top" href="#nav" aria-label="Click to scroll to top of webpage">To top</a></li>
+
+    </footer>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

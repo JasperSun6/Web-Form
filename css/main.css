@@ -1,0 +1,361 @@
+/* 
+Assignment 4 - Web Form
+Author: Jasper Jiaqian Sun
+Date Created: Nov 17, 2021 / Last modified: Nov 20, 2021
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+
+html {
+  font-family: "Heebo", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* --------- Variables --------- */
+:root {
+  --color-black: black;
+  --color-white: white;
+  --color-red: red;
+  --color-light-blue: lightblue;
+  --color-dark-blue: darkblue;
+  --color-light-brown: #df8a1b;
+  --color-dark-brown: #785121;
+  --color-light-gray: #5d5d5d;
+}
+
+.container {
+  margin: 0;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.banner {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.btn {
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/*  Base Type Hierarchy */
+h1 {
+  text-align: center;
+  font-size: 1.802rem;
+  font-weight: normal;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+h2 {
+  color: var(--color-dark-brown);
+  font-size: 1.602rem;
+  font-weight: normal;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+h3 {
+  font-weight: bold;
+  font-size: 1.424rem;
+  margin: 0 0 1.5rem;
+}
+h4 {
+  font-size: 1.266rem;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+h5 {
+  font-size: 1.125rem;
+  padding-bottom: 2px;
+  margin: 0 0 1.5rem;
+  border-bottom: 0.5px solid var(--color-light-gray);
+}
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.367rem;
+  line-height: 2rem;
+}
+a {
+  color: var(--color-dark-brown);
+}
+small,
+.text_small {
+  color: var(--color-white);
+  font-size: 0.889rem;
+}
+
+/* --------- Accessibility --------- */
+
+/* tab focus outline */
+*:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 2px;
+}
+
+/* skip links */
+.skip-links {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.skip-links a {
+  position: absolute;
+  top: -100rem;
+  display: inline-block;
+  padding: 1rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 100000;
+}
+.skip-links a:focus {
+  top: 0;
+}
+
+/* to top button */
+.to-top {
+  position: fixed;
+  bottom: 0;
+  right: 1rem;
+  color: var(--color-white);
+  background-color: var(--color-light-gray);
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  text-decoration: none;
+  transform: translateY(100%);
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+}
+.to-top.visible {
+  transform: none;
+}
+.to-top:hover,
+.to-top:focus {
+  background-color: var(--color-light-brown);
+}
+
+/* top navbar styling */
+.header-logo {
+  width: 15rem;
+}
+
+.navbar {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  list-style-type: none;
+  flex-direction: column;
+}
+
+.nav-item li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item a {
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+/* banner styling */
+.banner-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../img/banner-donuts.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
+  color: var(--color-white);
+}
+
+.signUp {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* form styling */
+fieldset {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light-brown);
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  margin: 0;
+  max-width: 40rem;
+}
+
+fieldset h1 {
+  text-align: left;
+  text-transform: unset;
+  margin-bottom: 0.8rem;
+}
+
+input {
+  border-radius: 150px;
+  border: 1px solid var(--color-dark-brown);
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0;
+  width: 100%;
+}
+
+input:focus {
+  border-color: var(--color-dark-blue);
+  background-color: var(--color-light-blue);
+}
+form.container {
+  text-align: left;
+  padding: 0;
+}
+
+form p {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: var(--color-black);
+}
+
+/* Hide label */
+.screen-reader-text {
+  position: absolute;
+  left: 9999rem;
+  opacity: 0;
+}
+
+/* submit button */
+.btn-signUp {
+  padding: 0.3rem 1.7rem;
+  font-size: 1rem;
+  color: var(--color-white);
+  background-color: var(--color-dark-brown);
+  border: solid 2px var(--color-dark-brown);
+}
+.btn-signUp:hover,
+.btn-signUp:focus {
+  background-color: var(--color-light-brown);
+  border-color: var(--color-light-brown);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-dark-brown);
+}
+
+.logo-footer img {
+  width: 5rem;
+}
+
+/*--------- MEDIUM 600px scale ---------*/
+@media only screen and (min-width: 37.5em) {
+  /*  Medium Type Hierarchy */
+  h1 {
+    font-size: 2.488rem;
+  }
+
+  h2 {
+    font-size: 2.074rem;
+  }
+
+  h3 {
+    font-size: 1.728rem;
+  }
+
+  h4 {
+    font-size: 1.44rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  /* navbar */
+  .navbar {
+    flex-direction: row;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .header-logo {
+    width: 10rem;
+  }
+  .nav-item li {
+    display: unset;
+  }
+  .header-right a {
+    padding-left: 2rem;
+  }
+
+  /* footer */
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    width: 5rem;
+  }
+}
+
+/*--------- LARGE 960px scale ---------*/
+@media only screen and (min-width: 60em) {
+  /*  Large Type Hierarchy */
+  h1 {
+    font-size: 3.052rem;
+  }
+
+  h2 {
+    font-size: 2.441rem;
+  }
+
+  h3 {
+    font-size: 1.953rem;
+  }
+
+  h4 {
+    font-size: 1.563rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
