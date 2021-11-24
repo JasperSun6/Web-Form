@@ -102,15 +102,25 @@ p {
 a {
   color: var(--color-dark-brown);
 }
+
 small,
 .text_small {
   color: var(--color-white);
   font-size: 0.889rem;
 }
 
+a:hover,
+li:hover {
+  transition: 0.5s;
+  color: var(--color-light-brown);
+}
 /* --------- Accessibility --------- */
 
 /* tab focus outline */
+*:focus {
+  outline: none;
+}
+
 *:focus-visible {
   outline: 2px solid var(--color-red);
   outline-offset: 2px;
@@ -155,6 +165,7 @@ small,
 }
 .to-top:hover,
 .to-top:focus {
+  color: var(--color-white);
   background-color: var(--color-light-brown);
 }
 
@@ -194,6 +205,28 @@ small,
   color: var(--color-white);
 }
 
+.banner-header h1 {
+  opacity: 0;
+  animation: slideUp 0.5s 0.5s forwards;
+}
+
+.banner-header p {
+  opacity: 0;
+  animation: slideUp 0.5s 0.7s forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
 .signUp {
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -210,7 +243,7 @@ fieldset {
   border-radius: 10px;
   padding: 1.5rem 1.5rem 0.5rem 1.5rem;
   margin: 0;
-  max-width: 40rem;
+  max-width: 40em;
 }
 
 fieldset h1 {
@@ -231,6 +264,7 @@ input:focus {
   border-color: var(--color-dark-blue);
   background-color: var(--color-light-blue);
 }
+
 form.container {
   text-align: left;
   padding: 0;
@@ -261,6 +295,7 @@ form p {
 .btn-signUp:focus {
   background-color: var(--color-light-brown);
   border-color: var(--color-light-brown);
+  transition: 0.5s;
 }
 
 .footer {
